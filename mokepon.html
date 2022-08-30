@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOKEPON!</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <section id="select__pet">
+        <h1 class="title">MOKEPON</h1>
+
+        <h2 class="subtitle">Choose your pet!</h2>
+
+        <div id="cards__container" class="cards__container">
+        </div>
+
+        <button id="pet__button">START</button>
+    </section>
+
+    <section id="select__attack">
+        <h2 class="subtitle">Choose your attack</h2>
+
+        <div id="attack__buttons--container" class="attack__buttons--container">
+            <button id="restart__button">Restart</button>
+        </div>
+
+        <div id="messages">
+            <p id="results">Good luck!</p>
+        </div>
+
+        <div class="combat__container">
+            
+
+            <div class="player__pet--container">
+                <div>
+                    <p>Remaining <strong>player</strong> lives:</p>
+                    <span id="remaining__player--lives">3</span>
+                </div>
+                <img id="player__pet--image">
+                <span id="player__pet" class="subtitle"></span>
+            </div>
+
+            <div class="versus__container">
+                <div class="versus__word">VS</div>
+
+                <div class="attack__list--container">
+                    <div id="player__attack--list"></div>
+
+                    <div id="enemy__attack--list"></div>
+                </div>
+            </div>
+
+            <div class="enemy__pet--container">
+                <div>
+                    <p>Remaining <strong>enemy</strong> lives:</p>
+                    <span id="remaining__enemy--lives">3</span>
+                </div>
+                <img id="enemy__pet--image">
+                <span id="enemy__pet" class="subtitle"></span>
+            </div>
+        </div>
+    </section>
+
+    <script src="./js/mokepon.js"></script>
+</body>
+</html>
