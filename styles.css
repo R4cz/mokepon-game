@@ -105,6 +105,17 @@ body {
     cursor: pointer;
 }
 
+/* CANVAS MAP */
+#map__container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#map {
+    border: 2px solid var(--white);
+}
+
 /* COMBAT GAME SCREEN */
 #select__attack {
     display: flex;
@@ -154,6 +165,11 @@ body {
     height: 3rem;
     border-radius: var(--border-radius);
     background-color: rgba(255, 255, 255, 0.1);
+}
+#restart__button--container {
+    display: flex;
+    gap: 1.5rem;
+    margin: 1.5rem 0;
 }
 #restart__button {
     width: 200px;
@@ -206,7 +222,7 @@ body {
     justify-content: center;
     align-items: center;
 }
-#remaining__player--lives {
+#span__player--victories {
     font-family: var(--title-font);
     font-size: 3rem;
 }
@@ -278,7 +294,7 @@ body {
     justify-content: center;
     align-items: center;
 }
-#remaining__enemy--lives {
+#span__enemy--victories {
     font-family: var(--title-font);
     font-size: 3rem;
 }

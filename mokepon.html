@@ -19,10 +19,23 @@
         <button id="pet__button">START</button>
     </section>
 
+    <section id="map__container">
+        <h2 class="subtitle">Travel the map with your mokepon</h2>
+
+        <canvas id="map"></canvas>
+        <button onmouseup="stopMovement()" onmousedown="moveUp()">Top</button>
+        <button onmouseup="stopMovement()" onmousedown="moveLeft()">Left</button>
+        <button onmouseup="stopMovement()" onmousedown="moveDown()">Down</button>
+        <button onmouseup="stopMovement()" onmousedown="moveRight()">Right</button>
+    </section>
+
     <section id="select__attack">
         <h2 class="subtitle">Choose your attack</h2>
 
         <div id="attack__buttons--container" class="attack__buttons--container">
+        </div>
+        
+        <div id="restart__button--container">
             <button id="restart__button">Restart</button>
         </div>
 
@@ -35,8 +48,8 @@
 
             <div class="player__pet--container">
                 <div>
-                    <p>Remaining <strong>player</strong> lives:</p>
-                    <span id="remaining__player--lives">3</span>
+                    <p>Victories <strong>player</strong>:</p>
+                    <span id="span__player--victories">0</span>
                 </div>
                 <img id="player__pet--image">
                 <span id="player__pet" class="subtitle"></span>
@@ -54,8 +67,8 @@
 
             <div class="enemy__pet--container">
                 <div>
-                    <p>Remaining <strong>enemy</strong> lives:</p>
-                    <span id="remaining__enemy--lives">3</span>
+                    <p>Victories <strong>enemy</strong>:</p>
+                    <span id="span__enemy--victories">0</span>
                 </div>
                 <img id="enemy__pet--image">
                 <span id="enemy__pet" class="subtitle"></span>
