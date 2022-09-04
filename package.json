@@ -1,0 +1,22 @@
+{
+  "name": "mokepon-game",
+  "version": "1.0.0",
+  "description": "A responsive web game. Built with HTML, CSS, JavaScript, Canvas, Node.JS and Express.JS.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/R4cz/mokepon-game.git"
+  },
+  "author": "R4cz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/R4cz/mokepon-game/issues"
+  },
+  "homepage": "https://github.com/R4cz/mokepon-game#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
