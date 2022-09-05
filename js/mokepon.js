@@ -22,6 +22,8 @@ const messagesDiv = document.getElementById('messages')
 const mapContainer = document.getElementById('map__container')
 const map = document.getElementById('map')
 
+let playerId = null
+
 let playerMokeponObject
 let enemyMokeponObject
 
@@ -169,13 +171,26 @@ function startGame() {
 
     selectPetButton.addEventListener('click', selectPlayerPet)
     restartButton.addEventListener('click', restartGame)
+
+    joinTheGame()
+}
+
+function joinTheGame() {
+    fetch('http://localhost:8080/join')
+        .then(function (res) {
+            if(res.ok) {
+                res.text()
+                    .then(function (response) {
+                        console.log(response)
+                        playerId = response
+                    })
+            }
+        })
 }
 
 // SELECTING PETS
 function selectPlayerPet() {
     selectPetSection.style.display = 'none'
-    mapContainer.style.display = 'flex'
-    mapInit()
 
     let chosen = false
     
@@ -193,7 +208,23 @@ function selectPlayerPet() {
         alert('Select a pet.')
     }
 
+    mapContainer.style.display = 'flex'
+    mapInit()
     showAttacks()
+
+    selectMokepon(playerMokeponObject.name)
+}
+
+function selectMokepon(playerMokepon) {
+    fetch(`http://localhost:8080/mokepon/${playerId}`, {
+        method : 'post',
+        headers : {
+            'Content-Type' : 'application/json'
+        },
+        body : JSON.stringify({
+            mokepon : playerMokepon
+        })
+    })
 }
 
 function selectEnemyPet(mokepon) {
