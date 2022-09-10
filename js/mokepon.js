@@ -354,6 +354,9 @@ function paintCanvas() {
     )
 
     playerMokeponObject.paintMokepon()
+
+    sendPosition(playerMokeponObject.x, playerMokeponObject.y)
+
     enemyCapipepo.paintMokepon()
     enemyHipodoge.paintMokepon()
     enemyRatigueya.paintMokepon()
@@ -363,6 +366,19 @@ function paintCanvas() {
         checkCollision(enemyHipodoge)
         checkCollision(enemyRatigueya)
     }
+}
+
+function sendPosition(x, y) {
+    fetch(`http://localhost:8080/mokepon/${playerId}/position`, {
+        method : 'post',
+        headers : {
+            'Content-Type' : 'application/json'
+        },
+        body : JSON.stringify({
+            x,
+            y
+        })
+    })
 }
 
 function moveUp() {
